@@ -98,7 +98,7 @@ export const pageQuery = graphql`
       }
     }
     allContentfulBlog(
-      filter: { node_locale: { eq: "sk" } }
+      filter: { node_locale: { eq: "sk" }, hide: {ne: true} }
       sort: { fields: [createdAt], order: DESC }
       limit: 5
     ) {
@@ -106,6 +106,7 @@ export const pageQuery = graphql`
         node {
           id
           title
+          hide
           slug
           node_locale
           createdAt(formatString: "DD.MM.YYYY")
