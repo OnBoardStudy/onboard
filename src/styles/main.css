@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,600,800|Gochi+Hand');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css');
 
 :root {
   --white: white;
@@ -708,3 +709,120 @@ div.icef-logo img {
 .small {
   font-size: small;
 }
+
+.testimonial {
+  border:none;
+  overflow:hidden;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding-bottom: 50px;
+  /*border: 3px solid green;*/
+  /*padding: 10px;*/
+}
+
+/* TESTIMONIAL START */
+
+.testimonial {
+  margin: 90px 0;
+  overflow: hidden;
+}
+.slider-testimonial {
+  position: relative;
+}
+.testimonial .swiper-testimonial {
+  position: relative;
+  width: calc(100% - 100px);
+  margin: 0 auto;
+  overflow: hidden;
+}
+.testimonial .swiper-testimonial .box {
+  display: -ms-flexbox!important;
+  display: flex!important;
+}
+.testimonial .slider-testimonial .swiper-button:after {
+  font-size: 30px;
+}
+.testimonial .slider-testimonial .swiper-button {
+  color: #000;
+  outline: 0;
+}
+.testimonial .slider-testimonial .swiper-button-prev {
+  left: 0;
+}
+.testimonial .slider-testimonial .swiper-button-next {
+  right: 0;
+}
+.testimonial .swiper-slide {
+  padding: 20px 0 30px 0 ;
+}
+.testimonial .part-img {
+  border: 1px dashed #5cc6ef;
+  border-radius: 50%;
+  overflow: hidden;
+  min-width: 112px;
+  width: 112px;
+  height: 112px;
+  padding: 6px;
+  margin-right: 30px;
+}
+.testimonial .part-img img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+.testimonial .part-text {
+  position: relative;
+  padding: 20px 20px 0 20px;
+}
+.testimonial .part-text p {
+  margin: 0;
+  padding: 0 0 10px 0;
+}
+.testimonial .part-text:before,
+.testimonial .part-text:after {
+  position: absolute;
+  font-size: 80px;
+  font-weight: 900;
+  font-style: italic;
+  color: #5cc6ef;
+  line-height: 0;
+}
+.testimonial .part-text:before {
+  content: "“";
+  left: -13px;
+  top: 20px;
+}
+.testimonial .part-text:after {
+  content: "”";
+  right: 13px;
+  bottom: -30px;
+}
+
+@media (max-width: 575.98px) {
+  .testimonial .box {
+    -ms-flex-wrap: wrap!important;
+    flex-wrap: wrap!important;
+    padding-top: 20px;
+  }
+  .testimonial .part-img {
+    min-width: auto;
+    margin: 0 auto 20px;
+    width: 80px;
+    height: 80px;
+  }
+  .testimonial .part-text {
+    width: 100%;
+    padding: 20px;
+  }
+  .testimonial .part-text:before,
+  .testimonial .part-text:after {
+    font-size: 70px;
+  }
+  .testimonial .part-text:after {
+    bottom: -20px;
+  }
+}
+
+/* TESTIMONIAL END */

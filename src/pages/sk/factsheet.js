@@ -8,7 +8,6 @@ import Hero from '../../components/Hero'
 class FactSheetSk extends Component {
   render() {
     const homepage = this.props.data.allContentfulHomepage.edges[0].node
-    console.log(this.props.data.allContentfulHomepage)
     const menuItems = this.props.data.allContentfulMenu.edges
 
     return (

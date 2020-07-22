@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
+import Testimonials from './Testimonials'
 
 const HomepageBoxes = props => {
   const boxes = props.data.homepageBox.map(box => (
@@ -31,6 +32,7 @@ const HomepageBoxes = props => {
           __html: props.data.description.childMarkdownRemark.html,
         }}
       />
+      {props.testimonials.length && <Testimonials testimonials={props.testimonials}/>}
       <div className="wells">{boxes}</div>
     </div>
   )
