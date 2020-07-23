@@ -1,6 +1,12 @@
-import React from 'react'
+import React from 'react';
+import {Helmet} from "react-helmet";
 // import Swiper JS
 import Swiper from 'swiper';
+import styles from "./testimonials.module.css";
+// import Swiper styles
+// import 'swiper/swiper-bundle.css';
+// import 'https://unpkg.com/swiper@6.0.2/swiper-bundle.min.css';
+// @import url('https://unpkg.com/swiper@6.0.2/swiper-bundle.min.css');
 
 let testimonials = null;
 
@@ -29,6 +35,9 @@ const Slide = props => <div className="swiper-slide">
 
 const Testimonials = props => (
   <div className="testimonial">
+    <Helmet>
+      <link rel="stylesheet" href="https://unpkg.com/swiper@6.0.4/swiper-bundle.min.css"/>
+    </Helmet>
     <div className="slider-testimonial">
       <div ref={el => InitTestimonials()} className="swiper-testimonial">
         <div className="swiper-wrapper">
