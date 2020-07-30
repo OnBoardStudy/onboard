@@ -2,21 +2,14 @@ import React from 'react';
 import {Helmet} from "react-helmet";
 // import Swiper JS
 import Swiper from 'swiper';
-import styles from "./testimonials.module.css";
-// import Swiper styles
-// import 'swiper/swiper-bundle.css';
-// import 'https://unpkg.com/swiper@6.0.2/swiper-bundle.min.css';
-// @import url('https://unpkg.com/swiper@6.0.2/swiper-bundle.min.css');
 
 let testimonials = null;
 
-const InitTestimonials = () => {
-  testimonials = new Swiper(".swiper-testimonial", {
-    direction: 'horizontal',
-    slidesPerView: 1,
-    loop: false,
-    spaceBetween: 0,
-  });
+const swiperParams = {
+  direction: 'horizontal',
+  slidesPerView: 1,
+  loop: true,
+  spaceBetween: 0
 }
 
 const Slide = props => <div className="swiper-slide">
@@ -27,28 +20,44 @@ const Slide = props => <div className="swiper-slide">
     </div>
     <div className="part-text">
       <p>
-        {props.testimonial.testimonial.testimonial} <b>{props.testimonial.author}</b>
+        {props.testimonial.testimonial.testimonial}
       </p>
+      <span className="name">{props.testimonial.author}</span>
     </div>
   </div>
 </div>
 
-const Testimonials = props => (
-  <div className="testimonial">
-    <Helmet>
-      <link rel="stylesheet" href="https://unpkg.com/swiper@6.0.4/swiper-bundle.min.css"/>
-    </Helmet>
-    <div className="slider-testimonial">
-      <div ref={el => InitTestimonials()} className="swiper-testimonial">
-        <div className="swiper-wrapper">
-          {props.testimonials.map(testimonial => <Slide key={testimonial.node.id} testimonial={testimonial.node}/>)}
-        </div>
-      </div>
+class Testimonials extends React.Component {
 
-      {props.testimonials.length > 1 && <div onClick={e => testimonials.slidePrev()} className="swiper-button swiper-button-prev"/>}
-      {props.testimonials.length > 1 && <div onClick={e => testimonials.slideNext()} className="swiper-button swiper-button-next"/>}
+  componentDidMount() {
+    this.testimonials = new Swiper(".swiper-testimonial", swiperParams);
+    this.interval = setInterval(() => this.testimonials.slideNext(), 10000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+    this.testimonials.destroy()
+  }
+
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div className="testimonial">
+      <Helmet>
+        <link rel="stylesheet" href="https://unpkg.com/swiper@6.0.4/swiper-bundle.min.css"/>
+      </Helmet>
+      <div className="slider-testimonial">
+        <div className="swiper-testimonial">
+          <div className="swiper-wrapper">
+            {this.props.testimonials.map(testimonial => <Slide key={testimonial.node.id} testimonial={testimonial.node}/>)}
+          </div>
+        </div>
+
+        {this.props.testimonials.length > 1 && <div onClick={e => this.testimonials.slidePrev()} className="swiper-button swiper-button-prev"/>}
+        {this.props.testimonials.length > 1 && <div onClick={e => this.testimonials.slideNext()} className="swiper-button swiper-button-next"/>}
+      </div>
     </div>
-  </div>
-)
+  }
+}
 
 export default Testimonials
