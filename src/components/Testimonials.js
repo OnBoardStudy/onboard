@@ -2,8 +2,9 @@ import React from 'react';
 import {Helmet} from "react-helmet";
 // import Swiper JS
 import Swiper from 'swiper';
-
-let testimonials = null;
+import { FormattedMessage } from 'react-intl'
+import Link from 'gatsby-link'
+import Img from 'gatsby-image/index'
 
 const swiperParams = {
   direction: 'horizontal',
@@ -55,6 +56,14 @@ class Testimonials extends React.Component {
 
         {this.props.testimonials.length > 1 && <div onClick={e => this.testimonials.slidePrev()} className="swiper-button swiper-button-prev"/>}
         {this.props.testimonials.length > 1 && <div onClick={e => this.testimonials.slideNext()} className="swiper-button swiper-button-next"/>}
+      </div>
+      <div className="btn-group">
+        <Link to={`/${this.props.lang}/testimonials/`}>
+          <FormattedMessage id="allTestimonials" />
+        </Link>
+        {/*<a href="#" className="btn btn-primary">*/}
+        {/*  <FormattedMessage id="allTestimonials" />*/}
+        {/*</a>*/}
       </div>
     </div>
   }

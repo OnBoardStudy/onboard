@@ -7,6 +7,7 @@ module.exports = {
   'messagePlaceholder': 'Ask us anything you want',
   'send': 'Send',
   'latestArticles': 'Blog',
+  'testimonials': 'Testimonials',
   'lang_name_sk': 'Slovenčina',
   'lang_name_en': 'English',
   'readMore': 'Read more',
@@ -16,4 +17,5 @@ module.exports = {
   'gdpr_subject': '',
   'gdpr_confirmation': '',
   'gdpr_more_info': '',
+  'allTestimonials': 'All testimonials'
 };

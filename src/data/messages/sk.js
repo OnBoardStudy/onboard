@@ -7,6 +7,7 @@ module.exports = {
   'messagePlaceholder': 'Spýtajte sa nás čokoľvek',
   'send': 'Odoslať',
   'latestArticles': 'Blog',
+  'testimonials': 'Testimonials',
   'lang_name_sk': 'Slovenčina',
   'lang_name_en': 'English',
   'readMore': 'Celý článok',
@@ -23,4 +24,5 @@ module.exports = {
   'gdpr_confirmation': 'Súhlasím: ',
   'gdpr_more_info': 'Bližšie informácie o spracúvaní osobných údajov sa nachádzajú v dokumente Pravidlá ' +
     'ochrany osobných údajov, ktorých aktuálna verzia je dostupná ',
+  'allTestimonials': 'Zobrazit referencie'
 };

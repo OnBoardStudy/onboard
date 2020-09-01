@@ -32,7 +32,7 @@ const HomepageBoxes = props => {
           __html: props.data.description.childMarkdownRemark.html,
         }}
       />
-      {props.testimonials.length && <Testimonials testimonials={props.testimonials}/>}
+      {props.testimonials.length && <Testimonials testimonials={props.testimonials} lang={props.lang}/>}
       <div className="wells">{boxes}</div>
     </div>
   )
