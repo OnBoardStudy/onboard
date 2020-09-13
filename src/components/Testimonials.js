@@ -58,7 +58,7 @@ class Testimonials extends React.Component {
         {this.props.testimonials.length > 1 && <div onClick={e => this.testimonials.slideNext()} className="swiper-button swiper-button-next"/>}
       </div>
       <div className="btn-group">
-        <Link to={`/${this.props.lang}/testimonials/`}>
+        <Link to={`/${this.props.lang}/testimonials/`} className="btn btn-primary">
           <FormattedMessage id="allTestimonials" />
         </Link>
         {/*<a href="#" className="btn btn-primary">*/}
