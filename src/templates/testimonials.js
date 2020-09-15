@@ -3,10 +3,14 @@ import TestimonialListNavigation from '../components/TestimonialListNavigation'
 import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import TestimonialList from '../components/TestimonialList'
+import Hero from '../components/Hero'
 
 const TestimonialsPage = ({ data, pathContext }) => {
   const { group, index, pageCount, pathPrefix } = pathContext
   const lang = pathPrefix.substr(0, 2)
+  // TODO: add a check if data were not loaded, or don't exist
+  const page = data.allContentfulTestimonialsPage.edges.find((edge) => edge.node.node_locale === lang).node;
+
   const testimonials = group.filter(
     item => (item.node.node_locale === lang && item.node.hide !== true)
   )
@@ -21,6 +25,7 @@ const TestimonialsPage = ({ data, pathContext }) => {
   return (
     <div>
       <Navigation lang={lang} menuItems={menu} menuType="top" />
+      {page && <Hero data={page}/>}
       {/*<BlogPostList posts={blogPosts} lang={lang} />*/}
       <TestimonialList testimonials={testimonials} lang={lang} />
       <TestimonialListNavigation lang={lang} index={index} pageCount={pageCount} />
@@ -76,6 +81,26 @@ export const testimonialsPageQuery = graphql`
             link
             type
           }
+        }
+      }
+    }
+    allContentfulTestimonialsPage {
+      edges {
+        node {
+          node_locale
+          heroTitle
+          heroImage {
+            sizes(maxWidth: 2000) {
+              ...GatsbyContentfulSizes
+            }
+          }
+          heroDescription {
+            childMarkdownRemark {
+              html
+            }
+          }
+          heroButtonText
+          heroButtonLink
         }
       }
     }
