@@ -581,6 +581,12 @@ div.footer > div.footer-content.site-width .marn-logo img,
   width: 130px;
 }
 
+div.footer > div.footer-content.site-width .qeac-logo img,
+.footer .qeac-logo img {
+  margin-top: 5px;
+  width: 130px;
+}
+
 .page-content,
 .blog-content {
   display: grid;

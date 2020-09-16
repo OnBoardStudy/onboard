@@ -36,6 +36,9 @@ const Footer = props => {
               <img src={require('../assets/marn-logo.png')} alt="onBoard" />
             </a>
           </div>
+          <div className="qeac-logo">
+            <img src={require('../assets/qeac.png')} alt="qeac" />
+          </div>
         </div>
         <div
           dangerouslySetInnerHTML={{
