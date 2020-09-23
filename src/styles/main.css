@@ -587,6 +587,11 @@ div.footer > div.footer-content.site-width .qeac-logo img,
   width: 130px;
 }
 
+.badge {
+  float: left;
+  margin-left: 5px;
+}
+
 .page-content,
 .blog-content {
   display: grid;

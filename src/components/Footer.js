@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+
 const Footer = props => {
   const menu = props.menuItems.filter(item => item.node.type === props.menuType)
   const menuItems = menu[0].node.items
@@ -28,17 +29,23 @@ const Footer = props => {
     <div className="footer">
       <div className="footer-content site-width">
         <div>
-          <div className="icef-logo">
-            <img src={require('../assets/icef.png')} alt="icef" />
-          </div>
-          <div className="marn-logo">
+          <span className="badge">
+            <div className="icef-logo">
+              <img src={require('../assets/icef.png')} alt="icef" />
+            </div>
+          </span>
+          <span className="badge">
+            <div className="marn-logo">
             <a href="https://www.mara.gov.au/" rel="nofollow" target="_blank">
               <img src={require('../assets/marn-logo.png')} alt="onBoard" />
             </a>
           </div>
-          <div className="qeac-logo">
-            <img src={require('../assets/qeac.png')} alt="qeac" />
-          </div>
+          </span>
+          <span className="badge">
+            <div className="qeac-logo">
+              <img src={require('../assets/qeac.png')} alt="qeac" />
+            </div>
+          </span>
         </div>
         <div
           dangerouslySetInnerHTML={{
