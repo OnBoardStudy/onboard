@@ -818,7 +818,7 @@ div.icef-logo img {
 .testimonial .part-text:after {
   content: "”";
   right: 13px;
-  bottom: 17px;
+  bottom: 30px;
 }
 .testimonial .btn-group {
   text-align: right;
