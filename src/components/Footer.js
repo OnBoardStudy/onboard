@@ -28,7 +28,7 @@ const Footer = props => {
   return (
     <div className="footer">
       <div className="footer-content site-width">
-        <div>
+        <div className="wrapper-badges">
           <span className="badge">
             <div className="icef-logo">
               <img src={require('../assets/icef.png')} alt="icef" />
@@ -36,10 +36,10 @@ const Footer = props => {
           </span>
           <span className="badge">
             <div className="marn-logo">
-            <a href="https://www.mara.gov.au/" rel="nofollow" target="_blank">
-              <img src={require('../assets/marn-logo.png')} alt="onBoard" />
-            </a>
-          </div>
+              <a href="https://www.mara.gov.au/" rel="nofollow" target="_blank">
+                <img src={require('../assets/marn-logo.png')} alt="onBoard" />
+              </a>
+            </div>
           </span>
           <span className="badge">
             <div className="qeac-logo">
@@ -47,6 +47,7 @@ const Footer = props => {
             </div>
           </span>
         </div>
+
         <div
           dangerouslySetInnerHTML={{
             __html: props.data.footerContacts.childMarkdownRemark.html,
