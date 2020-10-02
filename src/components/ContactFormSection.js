@@ -55,6 +55,7 @@ export default class ContactFormSection extends React.Component {
             action={`/${this.props.lang}/thanks/`}
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true"
             onSubmit={this.handleSubmit}
           >
             {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
@@ -143,6 +144,8 @@ export default class ContactFormSection extends React.Component {
               <FormattedMessage id="gdpr_more_info"/>
               <a href={require('../assets/terms_and_conditions.pdf')} target="_blank">TU</a>
             </label>)}
+
+            <div data-netlify-recaptcha="true"></div>
 
             <FormattedMessage id="send">
               {text => <input type="submit" value={text}/>}
